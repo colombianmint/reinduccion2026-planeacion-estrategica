@@ -815,6 +815,17 @@
                             <div class="flex items-center bg-slate-50 border border-slate-200 rounded-lg p-3">
                                 <div
                                     class="w-10 h-10 rounded bg-white border border-gray-200 flex items-center justify-center mr-3 shadow-sm">
+                                    <i class="fa-solid fa-magnifying-glass-chart text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-800 text-sm">Auditoría Deloitte</h5>
+                                    <p class="text-xs text-green-600 font-bold">Calificación promedio: 98%</p>
+                                </div>
+                                <i class="fa-solid fa-circle-check text-green-500 ml-auto text-xl"></i>
+                            </div>
+                            <div class="flex items-center bg-slate-50 border border-slate-200 rounded-lg p-3">
+                                <div
+                                    class="w-10 h-10 rounded bg-white border border-gray-200 flex items-center justify-center mr-3 shadow-sm">
                                     <i class="fa-solid fa-sack-dollar text-yellow-600"></i>
                                 </div>
                                 <div>
@@ -845,8 +856,167 @@
             </footer>
         </section>
 
-        <!-- Slide 7: El Semáforo -->
+        <!-- Slide 7: Detalle Auditoría Deloitte -->
         <section class="slide" id="slide-7">
+            <style>
+                .deloitte-bg {
+                    background-color: #ffffff;
+                    background-image: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
+                }
+
+                .deloitte-header {
+                    background: #86bc25;
+                    /* Deloitte Green */
+                    color: white;
+                    padding: 1.5rem 3rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                }
+
+                .attr-bar-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 0.5rem;
+                    flex: 1;
+                    height: 100%;
+                    justify-content: flex-end;
+                }
+
+                .attr-bar {
+                    width: 45px;
+                    background: #00a1de;
+                    /* Deloitte Blue */
+                    border-radius: 4px 4px 0 0;
+                    position: relative;
+                    transition: height 1.5s ease-out;
+                }
+
+                .attr-bar.green {
+                    background: #43b02a;
+                }
+
+                .attr-label-box {
+                    background: #0076a8;
+                    color: white;
+                    padding: 0.75rem 0.5rem;
+                    font-size: 0.7rem;
+                    text-align: center;
+                    width: 100%;
+                    min-height: 80px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                }
+
+                .value-label {
+                    position: absolute;
+                    top: -25px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-weight: 800;
+                    color: #1e293b;
+                    font-size: 0.9rem;
+                }
+
+                .stage-indicator {
+                    width: 120px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2px;
+                }
+
+                .stage-box {
+                    height: 100px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-weight: 900;
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                }
+            </style>
+            <div class="w-full h-full deloitte-bg font-roboto flex flex-col">
+                <div class="deloitte-header">
+                    <div>
+                        <h2 class="text-3xl font-black font-montserrat tracking-tight">AUDITORÍA DE CUMPLIMIENTO
+                            DELOITTE</h2>
+                        <p class="text-sm font-bold opacity-90 uppercase tracking-widest">Estado de Desarrollo por
+                            Atributo • Resultado 2025</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-4xl font-black tracking-tighter">98%</div>
+                        <div class="text-xs font-bold uppercase tracking-widest">Calificación Promedio</div>
+                    </div>
+                </div>
+
+                <div class="flex-1 flex p-12 gap-2 pb-0">
+                    <!-- Stage Markers -->
+                    <div class="stage-indicator">
+                        <div class="stage-box bg-[#00a651]">Avanzado</div>
+                        <div class="stage-box bg-[#ffc20e]">Intermedio</div>
+                        <div class="stage-box bg-[#c8102e]">Básico</div>
+                        <div
+                            class="h-[80px] bg-[#0076a8] flex items-center justify-center text-white text-[0.6rem] font-bold text-center px-1">
+                            Estado de Desarrollo / Atributo</div>
+                    </div>
+
+                    <!-- Bars -->
+                    <div class="flex-1 flex items-end gap-2 h-full">
+                        <div class="attr-bar-container">
+                            <div class="attr-bar green" style="height: 100%"><span class="value-label">100%</span></div>
+                            <div class="attr-label-box">Gobierno y Liderazgo</div>
+                        </div>
+                        <div class="attr-bar-container">
+                            <div class="attr-bar green" style="height: 100%"><span class="value-label">100%</span></div>
+                            <div class="attr-label-box">Evaluaciones de Riesgo</div>
+                        </div>
+                        <div class="attr-bar-container">
+                            <div class="attr-bar green" style="height: 97%"><span class="value-label">97%</span></div>
+                            <div class="attr-label-box">Políticas y Procedimientos</div>
+                        </div>
+                        <div class="attr-bar-container">
+                            <div class="attr-bar green" style="height: 100%"><span class="value-label">100%</span></div>
+                            <div class="attr-label-box">Capacitación y Comunicación</div>
+                        </div>
+                        <div class="attr-bar-container">
+                            <div class="attr-bar green" style="height: 100%"><span class="value-label">100%</span></div>
+                            <div class="attr-label-box">Gestión de Denuncias</div>
+                        </div>
+                        <div class="attr-bar-container">
+                            <div class="attr-bar green" style="height: 100%"><span class="value-label">100%</span></div>
+                            <div class="attr-label-box">Gestión de Casos e Investigaciones</div>
+                        </div>
+                        <div class="attr-bar-container">
+                            <div class="attr-bar green" style="height: 93%"><span class="value-label">93%</span></div>
+                            <div class="attr-label-box">Pruebas y Monitoreo</div>
+                        </div>
+                        <div class="attr-bar-container">
+                            <div class="attr-bar green" style="height: 97%"><span class="value-label">97%</span></div>
+                            <div class="attr-label-box">Debida Diligencia a Terceros</div>
+                        </div>
+                        <div class="attr-bar-container">
+                            <div class="attr-bar green" style="height: 92%"><span class="value-label">92%</span></div>
+                            <div class="attr-label-box">Mejora Continua</div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer
+                    class="bg-[#00213b] text-white py-2 px-12 flex justify-between items-center text-[0.65rem] font-bold">
+                    <span>FUENTE: INFORME DE AUDITORÍA EXTERNA DELOITTE</span>
+                    <span>C.I. COLOMBIAN MINT © 2026</span>
+                </footer>
+            </div>
+        </section>
+
+        <!-- Slide 8: El Semáforo -->
+        <section class="slide" id="slide-8">
             <style>
                 .s4-bg {
                     background-color: #000000;
@@ -1013,7 +1183,7 @@
         </section>
 
         <!-- Slide 8: Decodificando el CAPTE -->
-        <section class="slide" id="slide-8">
+        <section class="slide" id="slide-9">
             <style>
                 .s5-bg {
                     background-color: #000000;
@@ -1300,7 +1470,7 @@
 
 
         <!-- Slide 9: Historias de Éxito -->
-        <section class="slide" id="slide-9">
+        <section class="slide" id="slide-10">
             <style>
                 .s6-bg {
                     background-color: #000000;
@@ -1575,7 +1745,7 @@
         </section>
 
         <!-- Slide 10: Estrategia 2026 -->
-        <section class="slide" id="slide-10">
+        <section class="slide" id="slide-11">
             <style>
                 .s7-bg {
                     background-color: #020617;
@@ -1852,7 +2022,7 @@
         </section>
 
         <!-- Slide 11: Tu Pasaporte -->
-        <section class="slide" id="slide-11">
+        <section class="slide" id="slide-12">
             <style>
                 .s8-bg {
                     background-color: #0f172a;
@@ -2064,7 +2234,7 @@
 
 
         <!-- Slide 12: Pacto Digital -->
-        <section class="slide" id="slide-12">
+        <section class="slide" id="slide-13">
             <style>
                 .s9-bg {
                     background-color: #000000;
@@ -2244,7 +2414,7 @@
         </section>
 
         <!-- Slide 13: El Cierre -->
-        <section class="slide" id="slide-13">
+        <section class="slide" id="slide-14">
             <style>
                 .s10-bg {
                     background-color: #0f172a;
@@ -2368,7 +2538,7 @@
     <div class="nav-controls">
         <button class="nav-btn" onclick="prevSlide()" title="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
         <span id="slide-indicator"
-            class="flex items-center justify-center bg-black/50 text-white px-3 rounded-full text-xs font-mono">01/13</span>
+            class="flex items-center justify-center bg-black/50 text-white px-3 rounded-full text-xs font-mono">01/14</span>
         <button class="nav-btn" onclick="nextSlide()" title="Siguiente"><i
                 class="fa-solid fa-chevron-right"></i></button>
     </div>
@@ -2391,7 +2561,7 @@
 
         // Navigation Logic
         let currentSlide = 0;
-        const totalSlides = 13;
+        const totalSlides = 14;
         const indicator = document.getElementById('slide-indicator');
 
         function updateSlide() {
