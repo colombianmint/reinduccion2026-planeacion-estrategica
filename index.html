@@ -868,21 +868,26 @@
                     background: #86bc25;
                     /* Deloitte Green */
                     color: white;
-                    padding: 1.5rem 3rem;
+                    height: 6rem;
+                    /* h-24 equivalent */
+                    padding: 1rem 3rem 1rem 28rem;
+                    /* padding-left increased to ensure no overlap */
+                    margin-top: 3.5rem;
+                    /* Lowered further to clear the fixed corporate logo */
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                    z-index: 50;
+                    position: relative;
                 }
 
                 .attr-bar-container {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    gap: 0.5rem;
                     flex: 1;
                     height: 100%;
-                    justify-content: flex-end;
                 }
 
                 .attr-bar {
@@ -924,21 +929,27 @@
                 }
 
                 .stage-indicator {
-                    width: 120px;
+                    width: 130px;
                     display: flex;
                     flex-direction: column;
-                    gap: 2px;
+                    height: 100%;
                 }
 
                 .stage-box {
-                    height: 100px;
+                    flex: 1;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     color: white;
                     font-weight: 900;
-                    font-size: 1rem;
+                    font-size: 0.8rem;
                     text-transform: uppercase;
+                    padding: 0 5px;
+                }
+
+                .label-row-height {
+                    height: 90px;
+                    /* Fixed height for consistent bottom alignment */
                 }
             </style>
             <div class="w-full h-full deloitte-bg font-roboto flex flex-col">
@@ -955,54 +966,83 @@
                     </div>
                 </div>
 
-                <div class="flex-1 flex p-12 gap-2 pb-0">
+                <div class="flex-1 flex px-12 pt-16 gap-4 pb-0 items-stretch">
                     <!-- Stage Markers -->
                     <div class="stage-indicator">
-                        <div class="stage-box bg-[#00a651]">Avanzado</div>
-                        <div class="stage-box bg-[#ffc20e]">Intermedio</div>
-                        <div class="stage-box bg-[#c8102e]">Básico</div>
+                        <div class="flex-1 flex flex-col gap-1 pb-4"> <!-- Color boxes section -->
+                            <div class="stage-box bg-[#00a651] rounded-t-lg">Avanzado</div>
+                            <div class="stage-box bg-[#ffc20e]">Intermedio</div>
+                            <div class="stage-box bg-[#c8102e] rounded-b-lg">Básico</div>
+                        </div>
                         <div
-                            class="h-[80px] bg-[#0076a8] flex items-center justify-center text-white text-[0.6rem] font-bold text-center px-1">
-                            Estado de Desarrollo / Atributo</div>
+                            class="label-row-height bg-[#0076a8] flex items-center justify-center text-white text-[0.6rem] font-bold text-center px-1 border border-white/10 uppercase">
+                            Estado de <br>Desarrollo / <br>Atributo</div>
                     </div>
 
-                    <!-- Bars -->
-                    <div class="flex-1 flex items-end gap-2 h-full">
+                    <!-- Bars Area -->
+                    <div class="flex-1 flex gap-2 h-full items-stretch">
                         <div class="attr-bar-container">
-                            <div class="attr-bar green" style="height: 100%"><span class="value-label">100%</span></div>
-                            <div class="attr-label-box">Gobierno y Liderazgo</div>
+                            <div class="flex-1 flex flex-col justify-end pb-4">
+                                <div class="attr-bar green" style="height: 100%"><span class="value-label">100%</span>
+                                </div>
+                            </div>
+                            <div class="attr-label-box label-row-height">Gobierno y Liderazgo</div>
                         </div>
                         <div class="attr-bar-container">
-                            <div class="attr-bar green" style="height: 100%"><span class="value-label">100%</span></div>
-                            <div class="attr-label-box">Evaluaciones de Riesgo</div>
+                            <div class="flex-1 flex flex-col justify-end pb-4">
+                                <div class="attr-bar green" style="height: 100%"><span class="value-label">100%</span>
+                                </div>
+                            </div>
+                            <div class="attr-label-box label-row-height">Evaluaciones de Riesgo</div>
                         </div>
                         <div class="attr-bar-container">
-                            <div class="attr-bar green" style="height: 97%"><span class="value-label">97%</span></div>
-                            <div class="attr-label-box">Políticas y Procedimientos</div>
+                            <div class="flex-1 flex flex-col justify-end pb-4">
+                                <div class="attr-bar green" style="height: 97%"><span class="value-label">97%</span>
+                                </div>
+                            </div>
+                            <div class="attr-label-box label-row-height">Políticas y Procedimientos</div>
                         </div>
                         <div class="attr-bar-container">
-                            <div class="attr-bar green" style="height: 100%"><span class="value-label">100%</span></div>
-                            <div class="attr-label-box">Capacitación y Comunicación</div>
+                            <div class="flex-1 flex flex-col justify-end pb-4">
+                                <div class="attr-bar green" style="height: 100%"><span class="value-label">100%</span>
+                                </div>
+                            </div>
+                            <div class="attr-label-box label-row-height">Capacitación y Comunicación</div>
                         </div>
                         <div class="attr-bar-container">
-                            <div class="attr-bar green" style="height: 100%"><span class="value-label">100%</span></div>
-                            <div class="attr-label-box">Gestión de Denuncias</div>
+                            <div class="flex-1 flex flex-col justify-end pb-4">
+                                <div class="attr-bar green" style="height: 100%"><span class="value-label">100%</span>
+                                </div>
+                            </div>
+                            <div class="attr-label-box label-row-height">Gestión de Denuncias</div>
                         </div>
                         <div class="attr-bar-container">
-                            <div class="attr-bar green" style="height: 100%"><span class="value-label">100%</span></div>
-                            <div class="attr-label-box">Gestión de Casos e Investigaciones</div>
+                            <div class="flex-1 flex flex-col justify-end pb-4">
+                                <div class="attr-bar green" style="height: 100%"><span class="value-label">100%</span>
+                                </div>
+                            </div>
+                            <div class="attr-label-box label-row-height">Gestión de Casos e Investigaciones</div>
                         </div>
                         <div class="attr-bar-container">
-                            <div class="attr-bar green" style="height: 93%"><span class="value-label">93%</span></div>
-                            <div class="attr-label-box">Pruebas y Monitoreo</div>
+                            <div class="flex-1 flex flex-col justify-end pb-4">
+                                <div class="attr-bar green" style="height: 93%"><span class="value-label">93%</span>
+                                </div>
+                            </div>
+                            <div class="attr-label-box label-row-height">Pruebas y Monitoreo</div>
                         </div>
                         <div class="attr-bar-container">
-                            <div class="attr-bar green" style="height: 97%"><span class="value-label">97%</span></div>
-                            <div class="attr-label-box">Debida Diligencia a Terceros</div>
+                            <div class="flex-1 flex flex-col justify-end pb-4">
+                                <div class="attr-bar green" style="height: 97%"><span class="value-label">97%</span>
+                                </div>
+                            </div>
+                            <div class="attr-label-box label-row-height">Debida Diligencia a Terceros</div>
                         </div>
                         <div class="attr-bar-container">
-                            <div class="attr-bar green" style="height: 92%"><span class="value-label">92%</span></div>
-                            <div class="attr-label-box">Mejora Continua</div>
+                            <div class="flex-1 flex flex-col justify-end pb-4">
+                                <div class="attr-bar green" style="height: 92%"><span class="value-label">92%</span>
+                                </div>
+                            </div>
+                            <div class="attr-label-box label-row-height">Mejora Continua</div>
                         </div>
                     </div>
                 </div>
